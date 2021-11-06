@@ -29,7 +29,7 @@ class PosterManagerTest {
     public void showAddedMovies() {
         PosterManager service = new PosterManager("ZERO", 5);
         service.showAddedMovies();
-        String[] expected = {"numberOne ", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade"};
+        String[] expected = {"numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade"};
         String[] actual = service.showAddedMovies();
         assertArrayEquals(expected, actual);
     }
