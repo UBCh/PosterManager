@@ -3,6 +3,7 @@ package domain;
 public class PosterManager {
     public String title;
     private int lengthReturn;
+    private int j;
     String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"};
 
     public PosterManager(int lengthReturn) {
@@ -24,6 +25,7 @@ public class PosterManager {
             tmp[i] = poster[i];
         }
         tmp[tmp.length - 1] = title;
+
         poster = tmp;
         return poster;
     }
