@@ -31,7 +31,8 @@ class PosterManagerTest {
     @Test
     public void showAddedMovies_one() {
         PosterManager service = new PosterManager(5);
-        String[] expected = { "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade"};
+        service.addMovie("ZERO");
+        String[] expected = {"ZERO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen"};
         String[] actual = service.showAddedMovies();
         assertArrayEquals(expected, actual);
     }
@@ -39,7 +40,8 @@ class PosterManagerTest {
     @Test
     public void showAddedMovies_two() {
         PosterManager service = new PosterManager(10);
-        String[] expected = {"numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward", "bloodshot"};
+        service.addMovie("ZERO");
+        String[] expected = {"ZERO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward", "bloodshot"};
         String[] actual = service.showAddedMovies();
         assertArrayEquals(expected, actual);
     }
@@ -47,7 +49,11 @@ class PosterManagerTest {
     @Test
     public void showAddedMovies_three() {
         PosterManager service = new PosterManager(11);
-        String[] expected = {"numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward", "bloodshot"};
+        service.addMovie("ZERO");
+        service.addMovie("ZERO");
+        service.addMovie("ZERO");
+        service.addMovie("ZERO");
+        String[] expected = {"ZERO", "ZERO", "ZERO","ZERO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward"};
         String[] actual = service.showAddedMovies();
         assertArrayEquals(expected, actual);
     }
@@ -55,7 +61,8 @@ class PosterManagerTest {
     @Test
     public void showAddedMovies_four() {
         PosterManager service = new PosterManager(0);
-        String[] expected = {"numberOne"};
+        service.addMovie("ZERO");
+        String[] expected = {"ZERO"};
         String[] actual = service.showAddedMovies();
         assertArrayEquals(expected, actual);
     }
