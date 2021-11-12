@@ -13,7 +13,6 @@ public class PosterManagerTest {
     }
 
 
-
     @Test
     public void shouldGetPoster() {
         PosterManager service = new PosterManager();
@@ -73,15 +72,17 @@ public class PosterManagerTest {
         String[] actual = service.showAddedMovies(poster);
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void showAddedMovies_five() {
         PosterManager service = new PosterManager(11);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne", "ZORRO", "ZORRO", "ZORRO", "ZORRO", "ZORRO"
         };
-        String[] expected = {"ZORRO", "ZORRO", "ZORRO","ZORRO","ZORRO","numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade"};
+        String[] expected = {"ZORRO", "ZORRO", "ZORRO", "ZORRO", "ZORRO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade"};
         String[] actual = service.showAddedMovies(poster);
         assertArrayEquals(expected, actual);
     }
+
     @Test
     public void showAddedMovies_six() {
         PosterManager service = new PosterManager(1);
