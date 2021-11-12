@@ -56,7 +56,10 @@ public class PosterManager {
         }
 
         int indexTo = 0;
-        for (int indexFrom = 0; indexFrom < lengthReturn; indexFrom++) {
+        // @codeCoverageIgnoreStart
+        for (int indexFrom = 0; indexFrom < lengthReturn; indexFrom++)
+        // @codeCoverageIgnoreEnd
+        {
             tmp[indexTo] = poster[poster.length - (1 + indexTo)];
             indexTo++;
             if (indexTo == refund) break;
