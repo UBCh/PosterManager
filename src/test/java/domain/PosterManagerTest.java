@@ -92,5 +92,13 @@ public class PosterManagerTest {
         String[] actual = service.showAddedMovies(poster);
         assertArrayEquals(expected, actual);
     }
+    @Test
+    public void showAddedMovies_sevan() {
+        PosterManager service = new PosterManager(1);
+        String[] poster = {null};
+        String[] expected = {null};
+        String[] actual = service.showAddedMovies(poster);
+        assertArrayEquals(expected, actual);
+    }
 }
 

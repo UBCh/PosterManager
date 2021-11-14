@@ -31,7 +31,8 @@ public class PosterManager {
     }
 
     public String[] showAddedMovies(String[] poster) {
-
+        if (poster.length ==0) { return poster;
+        }
         if (lengthReturn > maxReturn) {
             lengthReturn = maxReturn;
         }
