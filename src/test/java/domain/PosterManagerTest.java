@@ -24,7 +24,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void addMovie() {
+    public void shouldAddMovie() {
         PosterManager service = new PosterManager();
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
@@ -34,7 +34,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void showAddedMovies_one() {
+    public void shouldShowAddedMovies_one() {
         PosterManager service = new PosterManager(5);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
@@ -44,7 +44,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void showAddedMovies_two() {
+    public void shouldShowAddedMovies_two() {
         PosterManager service = new PosterManager(10);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
@@ -54,7 +54,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void showAddedMovies_three() {
+    public void shouldShowAddedMovies_three() {
         PosterManager service = new PosterManager(11);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
@@ -64,17 +64,17 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void showAddedMovies_four() {
+    public void shouldShowAddedMovies_four() {
         PosterManager service = new PosterManager(0);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
-        String[] expected = {"numberOne"};
+        String[] expected = {};
         String[] actual = service.showAddedMovies(poster);
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void showAddedMovies_five() {
+    public void shouldShowAddedMovies_five() {
         PosterManager service = new PosterManager(11);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne", "ZORRO", "ZORRO", "ZORRO", "ZORRO", "ZORRO"
         };
@@ -84,7 +84,7 @@ public class PosterManagerTest {
     }
 
     @Test
-    public void showAddedMovies_six() {
+    public void shouldShowAddedMovies_six() {
         PosterManager service = new PosterManager(1);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
@@ -92,13 +92,6 @@ public class PosterManagerTest {
         String[] actual = service.showAddedMovies(poster);
         assertArrayEquals(expected, actual);
     }
-    @Test
-    public void showAddedMovies_sevan() {
-        PosterManager service = new PosterManager(1);
-        String[] poster = {null};
-        String[] expected = {null};
-        String[] actual = service.showAddedMovies(poster);
-        assertArrayEquals(expected, actual);
-    }
+
 }
 

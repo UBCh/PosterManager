@@ -31,36 +31,22 @@ public class PosterManager {
     }
 
     public String[] showAddedMovies(String[] poster) {
-        if (poster.length ==0) { return poster;
-        }
+
         if (lengthReturn > maxReturn) {
             lengthReturn = maxReturn;
         }
-        if (lengthReturn > poster.length) {
-            lengthReturn = poster.length;
-        }
-
-        if (lengthReturn < 1) {
-            lengthReturn = 1;
-        }
         int refund = 0;
-        String[] tmp = new String[lengthReturn];
 
-        if (poster.length < maxReturn) {
+
+        if (poster.length < lengthReturn) {
             refund = poster.length;
-        }
-        if (poster.length > lengthReturn) {
+        } else {
             refund = lengthReturn;
         }
-        if (lengthReturn == 1) {
-            tmp[0] = poster[poster.length - 1];
-        }
-
+        String[] tmp = new String[refund];
         int indexTo = 0;
-        // @codeCoverageIgnoreStart
-        for (int indexFrom = 0; indexFrom < lengthReturn; indexFrom++)
-        // @codeCoverageIgnoreEnd
-        {
+
+        for (int indexFrom = 0; indexFrom < lengthReturn; indexFrom++) {
             tmp[indexTo] = poster[poster.length - (1 + indexTo)];
             indexTo++;
             if (indexTo == refund) break;
@@ -68,6 +54,7 @@ public class PosterManager {
         return tmp;
     }
 }
+
 
 
 
