@@ -13,7 +13,6 @@ public class PosterManager {
     public PosterManager() {
     }
 
-
     public String[] getPoster(String[] poster) {
         return poster;
     }
