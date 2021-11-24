@@ -3,7 +3,7 @@ package domain;
 public class PosterManager {
     private String title;
     private int lengthReturn;
-    private final int maxReturn = 10;
+    private int maxReturn = 10;
     private String[] poster;
 
     public PosterManager(int lengthReturn) {
@@ -17,6 +17,10 @@ public class PosterManager {
         return poster;
     }
 
+    public int setMaxReturn(int maxReturn) {
+        this.maxReturn = maxReturn;
+        return maxReturn;
+    }
 
     public String[] addMovie(String title, String[] poster) {
         String[] tmp = new String[poster.length + 1];
