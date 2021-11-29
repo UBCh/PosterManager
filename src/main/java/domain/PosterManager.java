@@ -2,8 +2,8 @@ package domain;
 
 public class PosterManager {
     private String title;
-    private int lengthReturn;
-    private int maxReturn = 10;
+    private int lengthReturn=10;
+
     private String[] poster;
 
     public PosterManager(int lengthReturn) {
@@ -17,9 +17,9 @@ public class PosterManager {
         return poster;
     }
 
-    public int setMaxReturn(int maxReturn) {
-        this.maxReturn = maxReturn;
-        return maxReturn;
+    public int setLengtReturn(int lengthReturn) {
+        this.lengthReturn = lengthReturn;
+        return lengthReturn;
     }
 
     public String[] addMovie(String title, String[] poster) {
@@ -35,13 +35,8 @@ public class PosterManager {
 
     public String[] showAddedMovies(String[] poster) {
 
-        if (lengthReturn > maxReturn) {
-            lengthReturn = maxReturn;
-        }
-        int refund = 0;
-
-
-        if (poster.length < lengthReturn) {
+               int refund = 0;
+       if (poster.length < lengthReturn) {
             refund = poster.length;
         } else {
             refund = lengthReturn;
