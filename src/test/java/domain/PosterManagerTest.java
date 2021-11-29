@@ -52,7 +52,7 @@ public class PosterManagerTest {
 
     @Test
     public void shouldShowAddedMoviesTwo() {
-        PosterManager service = new PosterManager(10);
+        PosterManager service = new PosterManager();
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
         String[] expected = {"numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward", "bloodshot"};
@@ -82,10 +82,10 @@ public class PosterManagerTest {
 
     @Test
     public void shouldShowAddedMoviesFive() {
-        PosterManager service = new PosterManager(21);
+        PosterManager service = new PosterManager(11);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne", "ZORRO", "ZORRO", "ZORRO", "ZORRO", "ZORRO"
         };
-        String[] expected = {"ZORRO", "ZORRO", "ZORRO", "ZORRO", "ZORRO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward", "bloodshot"};
+        String[] expected = {"ZORRO", "ZORRO", "ZORRO", "ZORRO", "ZORRO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward"};
         String[] actual = service.showAddedMovies(poster);
         assertArrayEquals(expected, actual);
     }
@@ -102,10 +102,10 @@ public class PosterManagerTest {
 
     @Test
     public void shouldShowAddedMoviesReturn() {
-        PosterManager service = new PosterManager(10);
+        PosterManager service = new PosterManager(7);
         String[] poster = {"bloodshot", "forward", "hotelBelgrade", "gentlemen", "InvisibleMan", "trollsWorldTour", "numberOne"
         };
-        String[] expected = {"ZERO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward", "bloodshot"};
+        String[] expected = {"ZERO", "numberOne", "trollsWorldTour", "InvisibleMan", "gentlemen", "hotelBelgrade", "forward"};
         String[] actual = service.showAddedMovies(service.addMovie("ZERO", poster));
         assertArrayEquals(expected, actual);
     }
