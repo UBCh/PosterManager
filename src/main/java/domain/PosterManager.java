@@ -2,7 +2,7 @@ package domain;
 
 public class PosterManager {
     private String title;
-    private int lengthReturn=10;
+    private int lengthReturn = 10;
 
     private String[] poster;
 
@@ -35,8 +35,8 @@ public class PosterManager {
 
     public String[] showAddedMovies(String[] poster) {
 
-               int refund = 0;
-       if (poster.length < lengthReturn) {
+        int refund = 0;
+        if (poster.length < lengthReturn) {
             refund = poster.length;
         } else {
             refund = lengthReturn;
